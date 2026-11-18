@@ -16,6 +16,10 @@ To do so, you need to:
 - Run `npx remotion studio` on the server
 - Ensure port 3000 is available to the internet
 
+:::note
+If a reverse proxy sits in front of Studio and connects to it over `127.0.0.1`, forward the `X-Forwarded-Proto` or `X-Forwarded-Host` header. Studio accepts a non-local `Host` header on loopback connections only when one of these headers is present, which is how it tells a proxy apart from a DNS rebinding request.
+:::
+
 The following examples have been tested with the [Hello World](/templates/hello-world) template initialized using `npx create-video@latest`.
 
 ## Dockerizing the Remotion Studio
